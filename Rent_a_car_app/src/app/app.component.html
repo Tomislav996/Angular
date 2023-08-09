@@ -1,0 +1,13 @@
+
+<div class="header">
+  <h1>{{message}}</h1>
+  <h2>{{title}}</h2>
+</div>
+
+<app-filter-options
+ (showRentedEvent)="showRented()"
+ (showAvailableEvent)="showAvailable()"
+ (resetEvent)="reset()">
+</app-filter-options>
+
+<app-cars-list [filteredCars] = "filteredCars"></app-cars-list>

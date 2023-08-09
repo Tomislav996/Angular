@@ -1,0 +1,15 @@
+
+
+<section class="cars-container" *ngFor ="let car of filteredCars">
+    <div class="car-card">
+        <img [src]="car.image">
+        <h3>Model: {{car.model}}</h3>
+        <p>{{car.engineType}}</p>
+        <p>Year: {{car.yearOfProduction}}</p>
+        <p> Price: {{car.priceToRent}}</p>
+        <button  *ngIf="car.isRented" (click)="toggleRentStatus(car.id)">Abort Renting</button>
+        <p class="label" *ngIf="!car.isRented">Available
+            <button (click)="toggleRentStatus(car.id)">Rent Now!</button>
+        </p>
+    </div>
+</section>

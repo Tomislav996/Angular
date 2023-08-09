@@ -1,0 +1,30 @@
+<!----->
+<!--
+<section class="container">
+    <div class="taskCard">
+        <h4>Title: {{tasks_list[0].title}}</h4>
+        <p>Description: {{tasks_list[0].description}}</p>
+    </div>
+    <div class="taskCard">
+        <h4>Title: {{tasks_list[1].title}}</h4>
+        <p>Description: {{tasks_list[1].description}}</p>
+    </div>
+    <div class="taskCard">
+        <h4>Title: {{tasks_list[2].title}}</h4>
+        <p>Description: {{tasks_list[2].description}}</p>
+    </div>
+</section>
+      -->
+<!----->
+<button (click) = "toggleShowTasks()">Hide Task</button>
+<section *ngIf="showTasks" class="container">
+    <div *ngFor="let task of tasks_list" class="taskCard">
+        <h4>Title: {{task.title}}</h4>
+        <p>Description: {{task.description}}</p>
+        <div class="operations">
+            <button *ngif="task.status === 'NOT_STARTED'">Start Task</button>
+            <button *ngif="task.status === 'IN_PROGRESS'">End Task</button>
+        </div>
+    </div>
+
+</section>

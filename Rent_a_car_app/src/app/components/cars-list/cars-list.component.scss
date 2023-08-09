@@ -1,0 +1,27 @@
+.cars-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+img{
+    width: 20rem;
+}
+
+.car-card{
+    border: 5px solid rgb(86, 159, 161);
+    box-shadow: 5px 5px 5px black;
+    border-radius: 50px;
+    margin: 10px;
+    color: rgb(196, 241, 237);
+    font-family: cursive;
+}
+
+.label{
+    color: rgb(14, 216, 14);
+    font-size: larger;
+    
+}
+
