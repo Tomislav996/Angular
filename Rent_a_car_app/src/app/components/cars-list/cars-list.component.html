@@ -1,12 +1,18 @@
+<nav class="filter-nav">
+        <label>Sort By:</label>
+        <select [(ngModel)]="sortBy">
+            <option value="Ascending">Ascending</option>
+            <option value="Descending">Descending</option>
+        </select>
+</nav>
 
-
-<section class="cars-container" *ngFor ="let car of filteredCars">
+<section class="cars-container" *ngFor ="let car of filteredCars | sort: sortBy">
     <div class="car-card">
         <img [src]="car.image">
         <h3>Model: {{car.model}}</h3>
         <p>{{car.engineType}}</p>
         <p>Year: {{car.yearOfProduction}}</p>
-        <p> Price: {{car.priceToRent}}</p>
+        <p> Price: {{car.priceToRent | currency: "EUR"}}</p>
         <button  *ngIf="car.isRented" (click)="toggleRentStatus(car.id)">Abort Renting</button>
         <p class="label" *ngIf="!car.isRented">Available
             <button (click)="toggleRentStatus(car.id)">Rent Now!</button>

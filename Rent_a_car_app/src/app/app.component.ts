@@ -70,7 +70,7 @@ export class AppComponent {
   filteredCars: Car[] = [];
 
   constructor() {
-    this.filteredCars = this.cars;
+    this.filteredCars = this.cars
   }
 
   showRented() {

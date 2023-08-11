@@ -2,6 +2,7 @@ body{
     background-image: url(https://images.hdqwalls.com/download/minimal-abstract-5k-nj-2048x1152.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 
 }
 
@@ -13,5 +14,8 @@ button{
     border-radius: 5px;
     background-color: rgb(145, 12, 34);
 }
-   
+
+button:hover{
+    background-color: rgb(218, 67, 67);
+}
    

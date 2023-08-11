@@ -25,3 +25,47 @@ img{
     
 }
 
+.filter-nav{
+    margin-left: 24%;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px black;
+    text-shadow: 2px 2px black;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    background-color: rgb(43, 77, 128);
+    height: 2.5rem;
+}
+
+select{
+    cursor: pointer;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 2px 2px black;
+}
+
+select:hover{
+    background-color: rgb(39, 38, 38);
+}
+
+option:hover{
+    background-color: rgb(39, 38, 38);
+}
+
+select option {
+    padding: 5px;
+    font-size: 14px;
+}
+.filter-nav>label{
+    margin-right: 5px;
+}

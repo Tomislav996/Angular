@@ -3,20 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { CarsListComponent } from './components/cars-list/cars-list.component';
-import { FilterOptionsComponent } from './components/filter-options/filter-options.component';
-import { SortPipe } from './pipes/sort.pipe';
+import { AddressTransform } from './pipes/address.transformer.pipe';
+import { ShortenPipe } from './pipes/shorten.pipe';
+import { TransformPipe } from './pipes/transform.pipe';
+import { PositionFilterPipe } from './pipes/position-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarsListComponent,
-    FilterOptionsComponent,
-    SortPipe,
+    AddressTransform,
+    ShortenPipe,
+    TransformPipe,
+    PositionFilterPipe
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

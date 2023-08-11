@@ -9,13 +9,19 @@ import { Car } from 'src/app/interfaces/car.interface';
 export class CarsListComponent {
 
   @Input()
-
    filteredCars: Car[] = []
+
+   sortBy: string = "Ascending"
+
+   
 
    toggleRentStatus = (id:number) : void => {
     let carFound = this.filteredCars.find((car)=> car.id === id )
     if(carFound){
       carFound.isRented =  !carFound.isRented
     }
+    console.log(this.sortBy);
+    
    }
+   
 }
