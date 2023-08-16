@@ -23,7 +23,7 @@ export class CarRentingService {
   }
 
   reset(): void {
-    this._filteredCars =  [...CARS_DATA]
+    this._filteredCars =  this._cars
   }
 
   toggleRentStatus(id: number) {
