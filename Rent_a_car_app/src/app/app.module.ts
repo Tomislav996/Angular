@@ -7,6 +7,7 @@ import { CarsListComponent } from './components/cars-list/cars-list.component';
 import { FilterOptionsComponent } from './components/filter-options/filter-options.component';
 import { SortPipe } from './pipes/sort.pipe';
 
+
 @NgModule({
   declarations: [
     AppComponent,

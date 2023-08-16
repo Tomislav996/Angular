@@ -1,23 +1,24 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, } from '@angular/core';
+import { CarRentingService } from 'src/app/services/car-renting-service.service';
 
 @Component({
   selector: 'app-filter-options',
   templateUrl: './filter-options.component.html',
   styleUrls: ['./filter-options.component.scss']
 })
-export class FilterOptionsComponent {
+export class FilterOptionsComponent  {
 
-  @Output() showRentedEvent = new EventEmitter()
-  @Output() showAvailableEvent = new EventEmitter()
-  @Output() resetEvent = new EventEmitter()
+  constructor(private readonly carsService: CarRentingService){}
 
-  showRented = () => {
-    this.showRentedEvent.emit()
+  showRented(){
+    this.carsService.showRented()
   }
-  showAvailable = () => {
-    this.showAvailableEvent.emit()
+
+  showAvailable(){
+    this.carsService.showAvailable()
   }
-  reset = () => {
-    this.resetEvent.emit()
+  
+  reset(){
+    this.carsService.reset()
   }
 }
