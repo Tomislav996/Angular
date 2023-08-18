@@ -1,0 +1,54 @@
+header{
+    text-align: center;
+    margin: 5px; 
+    padding: 5px; 
+    color: rgb(239, 255, 255);
+    text-shadow: 2px 2px  rgb(0, 0, 0);
+}
+
+
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 3px 3px 3px 3px rgb(0, 0, 0);
+    margin-left: 3.5rem;
+    width: 90%;
+    height: 7rem;
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 100%, rgba(0,0,0,1) 100%, rgba(55,91,104,1) 100%, rgba(0,212,255,1) 100%);
+
+    ul{
+        display: flex;
+        list-style: none;
+
+        li{
+            margin: 2rem;
+            cursor: pointer;
+
+            a{
+                color: rgb(220, 228, 235);
+                text-decoration: none;
+                letter-spacing: 1px;
+            }
+        }
+
+        a:hover{
+            font-size: 20px;
+            line-height: 12px;
+        }
+        
+
+
+        
+    }
+
+    
+}
+
+
+

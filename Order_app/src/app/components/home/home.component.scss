@@ -1,0 +1,21 @@
+
+section{
+    display: flex;
+    justify-content: center;
+}
+
+.home{
+    text-align: center;
+    margin-top: 6rem;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 100%, rgba(0,0,0,1) 100%, rgba(55,91,104,1) 100%, rgba(0,212,255,1) 100%);
+    width: 50%;
+    height: 200px;
+    border-radius: 10px;
+    color: white;
+
+    h2{
+        padding-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}

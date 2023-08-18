@@ -9,7 +9,7 @@ import { CarRentingService } from 'src/app/services/car-renting-service.service'
 })
 export class CarsListComponent implements OnInit, DoCheck {
 
-   sortBy: string = "Ascending"
+   sortBy: string = "noSort"
 
    cars: Car[] = []
    

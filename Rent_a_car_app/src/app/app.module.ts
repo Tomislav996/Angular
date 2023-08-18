@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CarsListComponent } from './components/cars-list/cars-list.component';
 import { FilterOptionsComponent } from './components/filter-options/filter-options.component';
 import { SortPipe } from './pipes/sort.pipe';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { SortPipe } from './pipes/sort.pipe';
   imports: [
     BrowserModule,
     FormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

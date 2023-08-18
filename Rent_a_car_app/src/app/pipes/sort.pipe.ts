@@ -10,8 +10,11 @@ export class SortPipe implements PipeTransform {
     return cars.sort((a, b) => {
       if(sort === "Ascending") {
         return  a.model.localeCompare(b.model)
+      } else if(sort === "Descending"){
+        return  b.model.localeCompare(a.model)
+      } else {
+        return 0
       }
-      return  b.model.localeCompare(a.model)
     });
   }
 

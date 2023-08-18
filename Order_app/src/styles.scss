@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(87,145,144,1) 0%, rgba(55,91,104,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+
+section{
+    display: flex;
+    justify-content: center;
+}
+
+.home{
+    text-align: center;
+    margin-top: 6rem;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 100%, rgba(0,0,0,1) 100%, rgba(55,91,104,1) 100%, rgba(0,212,255,1) 100%);
+    width: 50%;
+    height: 200px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 3px 3px 3px 3px rgb(0, 0, 0);
+
+    h2{
+        padding-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+
+.products-container{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+
+    .product-card{
+        text-align: center;
+        line-height: 30px;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+        color: white;
+        
+      background: rgb(2,0,36);
+       background: linear-gradient(90deg, rgba(2,0,36,1) 100%, rgba(0,0,0,1) 100%, rgba(55,91,104,1) 100%, rgba(0,212,255,1) 100%);
+
+
+        button{
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgb(11, 94, 11);
+            color: white;
+        }
+
+        button:hover{
+            background-color: rgb(41, 151, 41);
+        }
+        
+        
+    }
+}

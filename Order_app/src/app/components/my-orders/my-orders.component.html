@@ -1,0 +1,19 @@
+<div *ngIf="orderedProducts.length > 0 else noItemsInCart" class="products-container">
+    <div class="product-card"*ngFor="let product of orderedProducts">
+        <h2>{{product.name}}</h2>
+        <h3>Price: {{product.price | currency: "EUR"}}</h3>
+        <p>Quantity: {{product.quantity}}</p>
+        <button (click)="productToIncrease(product)" >+</button>
+        <button (click)="productToReduce(product)">-</button>
+        <p class="out-of-stock" *ngIf="product.stock === 0 ">Stock limit reached!</p>
+    </div>
+</div>
+
+<ng-template #noItemsInCart >
+    <section>
+        <div class="empty-cart">
+            <h1>Your Cart Is Empty</h1>
+            <p>You can add products that you wish to buy by navigating to the Products section of our Website</p>
+        </div>
+    </section>
+</ng-template>
