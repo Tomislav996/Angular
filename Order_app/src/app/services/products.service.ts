@@ -54,5 +54,14 @@ export class ProductsService {
     return this._productsInCart
   }
 
+  getTotal(){
+    let total = 0
+    for (let product of this._productsInCart){
+      total += product.price * product.quantity
+    }
+
+    return total
+  }
+
 
 }
