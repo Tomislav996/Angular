@@ -26,8 +26,8 @@ export class ProductsService {
 
   }
 
-  reduceQuantity(productToReduce: Product):void{
-    let productFound = this._products.find((product)=> product === productToReduce)
+  reduceQuantity(productId: Number):void{
+    let productFound = this._products.find((product)=> product.id === productId)
     if(productFound){
       if( productFound.quantity === 1){
         let productToRemove = this._productsInCart.indexOf(productFound)
@@ -39,8 +39,8 @@ export class ProductsService {
   }
 
 
-  increaseQuantity(productToReduce: Product){
-    let productFound = this._products.find((product)=> product === productToReduce)
+  increaseQuantity(productId: Number){
+    let productFound = this._products.find((product)=> product.id === productId)
     if(productFound){
       if( productFound.stock === 0 ){
         return

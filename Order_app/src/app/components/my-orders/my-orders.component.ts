@@ -20,12 +20,12 @@ export class MyOrdersComponent implements OnInit, DoCheck {
    this.orderedProducts = this.productsService.getProductsInCart()
  }
 
- productToReduce(product: Product){
-  this.productsService.reduceQuantity(product)
+ productToReduce(productId: Number){
+  this.productsService.reduceQuantity(productId)
  }
 
- productToIncrease(product: Product){
-  this.productsService.increaseQuantity(product)
+ productToIncrease(productId: Number){
+  this.productsService.increaseQuantity(productId)
  }
 
  ngDoCheck(): void {

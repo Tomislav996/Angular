@@ -3,8 +3,8 @@
         <h2>{{product.name}}</h2>
         <h3>Price: {{product.price | currency: "EUR"}}</h3>
         <p>Quantity: {{product.quantity}}</p>
-        <button (click)="productToIncrease(product)" >+</button>
-        <button (click)="productToReduce(product)">-</button>
+        <button (click)="productToIncrease(product.id)" >+</button>
+        <button (click)="productToReduce(product.id)">-</button>
         <p class="out-of-stock" *ngIf="product.stock === 0 ">Stock limit reached!</p>
     </div>
 </div>
