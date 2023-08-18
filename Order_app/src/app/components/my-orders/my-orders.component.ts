@@ -14,7 +14,7 @@ export class MyOrdersComponent implements OnInit, DoCheck {
   }
 
  orderedProducts: Product[] = [];
- total: Number = 0
+ total: number | string = 0
 
  ngOnInit(): void {
    this.orderedProducts = this.productsService.getProductsInCart()
@@ -29,7 +29,7 @@ export class MyOrdersComponent implements OnInit, DoCheck {
  }
 
  ngDoCheck(): void {
-    this.total =  this.productsService.getTotal()
+    this.total =  this.productsService.getTotal().toFixed(2)
  }
 
 }
