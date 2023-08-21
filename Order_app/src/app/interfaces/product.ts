@@ -5,6 +5,6 @@ export interface Product {
     description: string,
     price: number,
     category: string,
-    stock: number
-    quantity: number
+    stock: number,
+    quantity: number,
 }

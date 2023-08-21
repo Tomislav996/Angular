@@ -6,12 +6,13 @@
         <button (click)="productToIncrease(product.id)" >+</button>
         <button (click)="productToReduce(product.id)">-</button>
         <p class="out-of-stock" *ngIf="product.stock === 0 ">Stock limit reached!</p>
+        <p>Price: {{product.price * product.quantity | currency: "EUR"}}</p>
     </div>
 </div>
 
 <div class="total">
     <div>
-        <h1>Total: {{total}} €</h1>
+        <h1>Total: {{total | currency: "EUR"}}</h1>
     </div>
 </div>
 
