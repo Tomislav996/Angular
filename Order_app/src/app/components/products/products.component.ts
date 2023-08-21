@@ -16,7 +16,7 @@ export class ProductsComponent implements OnInit {
     this.products = this.productsService.getProducts()
   }
 
-  addProductToCart(productToAdd: Product){
+  addProductToCart(productToAdd:  number){
     this.productsService.addProductToCart(productToAdd)
   }
 }

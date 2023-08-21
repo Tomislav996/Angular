@@ -5,6 +5,6 @@
             <h3>Price: {{product.price | currency: "EUR"}}</h3>
             <h4>Category: {{product.category}}</h4>
             <p>Stock: {{product.stock}}</p>
-            <button (click)=" addProductToCart(product)" [disabled]="product.stock === 0" [ngClass]="{'disabled-button': product.stock === 0}">Add To Cart</button>
+            <button (click)=" addProductToCart(product.id)" [disabled]="product.stock === 0" [ngClass]="{'disabled-button': product.stock === 0}">Add To Cart</button>
         </div>
 </div>

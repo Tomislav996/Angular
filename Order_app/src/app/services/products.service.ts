@@ -16,18 +16,26 @@ export class ProductsService {
     return this._products;
   }
 
-  addProductToCart(productToAdd: Product): void{
-   let productFound = this._productsInCart.find((product) => product === productToAdd)
-   if(!productFound){
-    this. _productsInCart.push(productToAdd)
-   }
-   productToAdd.stock --
-   productToAdd.quantity ++
+  addProductToCart(productId: number): void {
+    const productToAdd = this._products.find(product => product.id === productId);
+  
+    if (productToAdd) {
+      const productInCart = this._productsInCart.find(product => product.id === productId);
+  
+      if (!productInCart) {
+        this._productsInCart.push(productToAdd);
+      }
 
+      productToAdd.stock--;
+      productToAdd.quantity++
+      
+    }
   }
+  
+  
 
   reduceQuantity(productId: Number):void{
-    let productFound = this._products.find((product)=> product.id === productId)
+    let productFound = this._productsInCart.find((product)=> product.id === productId)
     if(productFound){
       if( productFound.quantity === 1){
         let productToRemove = this._productsInCart.indexOf(productFound)
@@ -40,7 +48,7 @@ export class ProductsService {
 
 
   increaseQuantity(productId: Number){
-    let productFound = this._products.find((product)=> product.id === productId)
+    let productFound = this._productsInCart.find((product)=> product.id === productId)
     if(productFound){
       if( productFound.stock === 0 ){
         return
