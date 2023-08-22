@@ -33,7 +33,7 @@ export class ProductsService {
   
       if (!productInCart) {
         this._productsInCart.push(productToAdd);
-        this._productsSubject.next([...this._productsInCart]);
+        this._cartSubject.next([...this._productsInCart]);
       }
 
       productToAdd.stock--;
@@ -52,7 +52,7 @@ export class ProductsService {
         let productToRemove = this._productsInCart.indexOf(productFound)
         this._productsInCart.splice(productToRemove,1)
 
-        this._productsSubject.next([...this._productsInCart]);
+        this._cartSubject.next([...this._productsInCart]);
       }
       productFound.stock ++
       productFound.quantity --
@@ -71,7 +71,7 @@ export class ProductsService {
       productFound.stock --
       productFound.quantity ++
 
-      this._productsSubject.next([...this._productsInCart]);
+      this._cartSubject.next([...this._productsInCart]);
     }
   }
 
