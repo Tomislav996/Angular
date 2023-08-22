@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../interfaces/product';
 import { PRODUCTS_DATA } from '../data/products-data';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,14 @@ export class ProductsService {
 
   private _products: Product[] = PRODUCTS_DATA
   private _productsInCart: Product[] = []
+
+   _productsSubject = new BehaviorSubject<Product[]>(this._products);
+
+
+   _cartSubject = new BehaviorSubject<Product[]>(this._productsInCart);
+
+
+
 
   getProducts(): Product[]{
     return this._products;
@@ -24,10 +33,12 @@ export class ProductsService {
   
       if (!productInCart) {
         this._productsInCart.push(productToAdd);
+        this._productsSubject.next(this._productsInCart);
       }
 
       productToAdd.stock--;
       productToAdd.quantity++
+      this._productsSubject.next(this._products);
       
     }
   }
@@ -40,9 +51,13 @@ export class ProductsService {
       if( productFound.quantity === 1){
         let productToRemove = this._productsInCart.indexOf(productFound)
         this._productsInCart.splice(productToRemove,1)
+
+        this._cartSubject.next( this._productsInCart)
       }
       productFound.stock ++
       productFound.quantity --
+
+      this._productsSubject.next(this._products);
     }
   }
 
@@ -55,6 +70,8 @@ export class ProductsService {
       }
       productFound.stock --
       productFound.quantity ++
+
+      this._cartSubject.next(this._productsInCart);
     }
   }
 
@@ -68,7 +85,7 @@ export class ProductsService {
       total += product.price * product.quantity
     }
 
-    return total
+    return total.toFixed(2)
   }
 
 

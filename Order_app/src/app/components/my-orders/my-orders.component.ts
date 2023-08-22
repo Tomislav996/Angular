@@ -1,4 +1,4 @@
-import { Component, DoCheck, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/interfaces/product';
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -7,7 +7,7 @@ import { ProductsService } from 'src/app/services/products.service';
   templateUrl: './my-orders.component.html',
   styleUrls: ['./my-orders.component.scss']
 })
-export class MyOrdersComponent implements OnInit, DoCheck {
+export class MyOrdersComponent implements OnInit {
 
   constructor(private readonly productsService: ProductsService){
 
@@ -17,19 +17,21 @@ export class MyOrdersComponent implements OnInit, DoCheck {
  total: number | string = 0
 
  ngOnInit(): void {
-   this.orderedProducts = this.productsService.getProductsInCart()
+  this.productsService._cartSubject.subscribe(cartProducts => {
+    this.orderedProducts = cartProducts;
+    this.total = this.productsService.getTotal()
+  })
  }
 
  productToReduce(productId: Number){
   this.productsService.reduceQuantity(productId)
+  this.total = this.productsService.getTotal()
  }
 
  productToIncrease(productId: Number){
   this.productsService.increaseQuantity(productId)
+  this.total = this.productsService.getTotal()
  }
 
- ngDoCheck(): void {
-    this.total =  this.productsService.getTotal().toFixed(2)
- }
 
 }
