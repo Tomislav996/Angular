@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent implements OnInit, OnDestroy {
   constructor(private readonly productsService: ProductsService){}
 
   products: Product[] = [];
