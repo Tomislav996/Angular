@@ -17,7 +17,7 @@ export class MyOrdersComponent implements OnInit, OnDestroy {
   private cartSubscription: Subscription | undefined;
 
   ngOnInit(): void {
-    this.productsService._cartSubject.subscribe((cartProducts) => {
+  this.cartSubscription = this.productsService._cartSubject.subscribe((cartProducts) => {
       this.orderedProducts = cartProducts;
       this.total = this.productsService.getTotal();
     });
