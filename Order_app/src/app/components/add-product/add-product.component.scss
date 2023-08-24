@@ -1,0 +1,36 @@
+
+    
+    #productForm{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: 20px;
+        line-height: 20px;
+        color: rgb(220, 228, 235);
+        font-weight: bold;
+        font-size: larger;
+    
+    
+        textarea{
+            color: black
+        }
+    
+        button{
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: rgb(88, 112, 112);
+            color: rgb(238, 247, 255);
+    
+        }
+    }
+    
+    #productForm * {
+        margin: 3px;
+    }
+
+
+

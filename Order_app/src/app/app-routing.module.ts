@@ -6,13 +6,16 @@ import { AboutComponent } from './components/about/about.component';
 import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { ProductsComponent } from './components/products/products.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent },
   {path: 'about', component: AboutComponent },
   {path: 'products', component: ProductsComponent},
   {path: 'my-orders', component: MyOrdersComponent},
-  {path: '**', component: NotFoundComponent}
+  {path: 'add-product', component: AddProductComponent},
+  {path: '**', component: NotFoundComponent},
+  
 ]
 
 

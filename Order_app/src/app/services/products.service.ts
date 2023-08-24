@@ -37,6 +37,7 @@ export class ProductsService {
     }
   }
 
+
   reduceQuantity(productId: Number): void {
     let productFound = this._productsInCart.find(
       (product) => product.id === productId
@@ -54,7 +55,8 @@ export class ProductsService {
       this._productsSubject.next([...this._products]);
     }
   }
-
+  
+  
   increaseQuantity(productId: Number) {
     let productFound = this._productsInCart.find(
       (product) => product.id === productId
@@ -78,4 +80,15 @@ export class ProductsService {
 
     return total.toFixed(2);
   }
+
+  addProduct(product: Product): void{
+    this._products.push(product)
+    this._productsSubject.next([...this._products]);
+  }
+
+  getProductsLength(): number {
+     return this._products.length + 1
+  }
+
+
 }

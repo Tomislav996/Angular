@@ -9,6 +9,8 @@ import { ProductsComponent } from './components/products/products.component';
 import { AboutComponent } from './components/about/about.component';
 import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddProductComponent } from './components/add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,14 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     ProductsComponent,
     AboutComponent,
     MyOrdersComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

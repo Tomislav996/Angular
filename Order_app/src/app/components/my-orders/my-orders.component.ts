@@ -23,12 +23,12 @@ export class MyOrdersComponent implements OnInit, OnDestroy {
     });
   }
 
-  productToReduce(productId: Number) {
+  productToReduce(productId: number) {
     this.productsService.reduceQuantity(productId);
     this.total = this.productsService.getTotal();
   }
 
-  productToIncrease(productId: Number) {
+  productToIncrease(productId: number) {
     this.productsService.increaseQuantity(productId);
     this.total = this.productsService.getTotal();
   }
