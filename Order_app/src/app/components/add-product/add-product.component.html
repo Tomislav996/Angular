@@ -1,6 +1,8 @@
 
     <form [formGroup]="addProductForm" (ngSubmit)="onFormSubmit()" id="productForm">
 
+
+
         <label for="productName">Product Name: </label>
         <input type="text" id="productName" formControlName="productName">
 
@@ -11,15 +13,18 @@
         <input type="number" id="productPrice" formControlName = "productPrice">
 
         <label for="productCategory">Category: </label>
-        <select name="category" id="category" formControlName = "productCategory">
-            <option value="Books">Books</option>
-            <option value="Clothing">Clothing</option>
-            <option value="Sports">Sports</option>
-            <option value="Electronics">Electronics</option>
-        </select>
+        <input type="text" id="productCategory" formControlName = "productCategory">
+
+
+        <div *ngIf="addProductForm.get('productCategory')?.hasError('invalidCategory') &&  
+           addProductForm.get('productCategory')?.touched && addProductForm.get('productCategory')?.invalid" style="color: red;">
+            <p style="color: red;">Invalid Category Selected</p>
+        </div>
 
         <label for="productStock">Stock: </label>
         <input type="number" id="productStock" formControlName="productStock">
+
+
 
         <button type="submit" [disabled]="!addProductForm.valid">Add Product</button>
 </form>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Product } from 'src/app/interfaces/product';
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -11,12 +11,13 @@ import { ProductsService } from 'src/app/services/products.service';
 export class AddProductComponent implements OnInit {
   addProductForm: FormGroup;
 
+  allowedCategories: string[] = ["books", "clothing", "sports", "electronics"]
+
   constructor(private readonly productsService: ProductsService) {}
 
   ngOnInit(): void {
     this.initForm();
   }
-
   initForm = () => {
     this.addProductForm = new FormGroup({
       productName: new FormControl('', [Validators.required]),
@@ -24,18 +25,21 @@ export class AddProductComponent implements OnInit {
         Validators.required,
         Validators.maxLength(100),
       ]),
-      productPrice: new FormControl('', [
+      productPrice: new FormControl(0, [
         Validators.required,
         Validators.min(1),
       ]),
-      productCategory: new FormControl('', [Validators.required]),
-      productStock: new FormControl('', [
+      productCategory: new FormControl('', [
+        Validators.required,
+        this.allowedCategoriesValidator,
+      ]),
+      productStock: new FormControl(0, [
         Validators.required,
         Validators.min(1),
       ]),
     });
   };
-
+  
   onFormSubmit = () => {
     const {
       productName,
@@ -44,7 +48,7 @@ export class AddProductComponent implements OnInit {
       productCategory,
       productStock,
     } = this.addProductForm.value;
-
+  
     const productToAdd: Product = {
       id: this.productsService.getProductsLength(),
       name: productName,
@@ -54,9 +58,20 @@ export class AddProductComponent implements OnInit {
       stock: productStock,
       quantity: 0,
     };
-
+  
     this.productsService.addProduct(productToAdd);
-
     this.addProductForm.reset();
   };
+  
+
+  
+
+
+  allowedCategoriesValidator = (control: FormControl): {[key: string]: boolean} | null => {
+    if(!this.allowedCategories.includes(control.value.toLowerCase())){
+      return {invalidCategory: true}
+    }
+
+      return null
+  }
 }
