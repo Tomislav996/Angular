@@ -61,17 +61,21 @@ export class AddProductComponent implements OnInit {
   
     this.productsService.addProduct(productToAdd);
     this.addProductForm.reset();
+
   };
   
 
   
 
 
-  allowedCategoriesValidator = (control: FormControl): {[key: string]: boolean} | null => {
-    if(!this.allowedCategories.includes(control.value.toLowerCase())){
-      return {invalidCategory: true}
+  allowedCategoriesValidator = (control: FormControl):{[key: string]: boolean} | null => {
+    const inputValue = control.value;
+  
+    if (inputValue && !this.allowedCategories.includes(inputValue.toLowerCase())) {
+      return { invalidCategory: true };
     }
-
-      return null
-  }
+  
+    return null;
+  };
+  
 }
