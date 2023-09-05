@@ -1,0 +1,22 @@
+.characters-container{
+    margin: 10px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: gold;
+
+    .character-card{
+        border: 2px solid gold;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 3px black;
+    }
+
+    .character-card p {
+        margin: 5px;
+        font-size: larger;
+        font-weight: bold;
+    }
+}
