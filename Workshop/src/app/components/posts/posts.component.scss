@@ -1,0 +1,46 @@
+button {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgb(5, 88, 5);
+    color: white;
+    border: 1px solid snow;
+    cursor: pointer;
+
+}
+
+.posts-container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    border: 3px solid rgb(0, 0, 0);
+    margin: 20px auto;
+    min-height: 50vh;
+    border-radius: 10%;
+    background-color: rgb(240, 150, 17);
+    box-shadow: 2px 2px  2px black;
+
+    .posts-card {
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+        border: 2px solid rgb(255, 255, 255);
+        border-radius: 10px;
+        width: 50%;
+        box-shadow: 2px 2px 3px rgb(5, 90, 13);
+        background-color: rgb(121, 139, 124);
+        color: rgb(248, 248, 237);
+        text-shadow: 1px 1px 0.5px rgb(0, 0, 0);
+        font-size: larger;
+
+    }
+
+    .posts-card * {
+        margin: 5px;
+    }
+}
+

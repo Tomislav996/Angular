@@ -1,0 +1,50 @@
+form{
+    text-align: center;
+    width: 100%;
+
+    div{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        margin: auto auto;
+        background: rgb(30,121,139);
+        background: linear-gradient(90deg, rgba(30,121,139,1) 0%, rgba(37,59,80,1) 100%, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
+        color: white;
+        min-height: 60vh;
+        border-radius: 10px;
+        box-shadow: 2px 2px 3px black;
+
+        label{
+            margin: 6px;
+        }
+
+        button{
+            margin-top: 30px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgb(204, 218, 20);
+            cursor: pointer;
+            font-weight: bold;
+        }
+    }
+}
+
+.post-status{
+    margin-top: 10px;
+
+    button {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: gold;
+        cursor: pointer;
+        color: black;
+    }
+}
+.success-msg{
+    color: rgb(197, 186, 25);
+    font-weight: bold;
+    text-shadow: 1px 1px 0.5px black;
+}

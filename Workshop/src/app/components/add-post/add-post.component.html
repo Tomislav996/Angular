@@ -1,0 +1,29 @@
+
+    <form [formGroup]="addPostForm" (ngSubmit)="onFormSubmit()">
+
+        <div>
+            <label for="title">Title: </label>
+            <input type="text" id="title" formControlName = "title">
+
+            <label for="content">Content: </label>
+            <input type="text" id="content" formControlName = "content">
+
+            <label for="author">Author: </label>
+            <input type="text" id="author" formControlName = "author">
+
+            <label for="creation-date">Created at: </label>
+            <input type="datetime-local" id="creation-date" formControlName = "creationDate">
+
+            <label for="likes">Number of likes: </label>
+            <input type="number" id="likes" formControlName = "likes">
+
+            <button [disabled]="!addPostForm.valid">Create Post</button>
+            <br>
+        </div>
+    </form>
+
+    
+    <div class="post-status" *ngIf="postCreationStatus">
+        <h2 class="success-msg">Successfully created a new post!</h2>
+        <button routerLink="/posts">Browse All Posts</button>
+    </div>

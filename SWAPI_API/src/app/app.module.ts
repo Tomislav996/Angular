@@ -10,6 +10,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { peopleReducer } from './store/people/people.reducer';
 import { PeopleEffects } from './store/people/people.effects';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { PeopleEffects } from './store/people/people.effects';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+
     StoreModule.forRoot({
       peopleState: peopleReducer,
     }),
