@@ -16,7 +16,7 @@ export class AddPostComponent implements OnInit {
   addPostForm: FormGroup;
   postCreationStatus: boolean;
 
-  constructor(private readonly postsService: PostsService, private readonly router: Router){}
+  constructor(private readonly postsService: PostsService){}
 
   ngOnInit(): void {
     this.initForm();
