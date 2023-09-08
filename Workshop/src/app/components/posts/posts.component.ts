@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from 'src/app/interfaces/post.interface';
 import { PostsService } from 'src/app/services/posts.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-posts',
@@ -10,17 +9,11 @@ import { Router } from '@angular/router';
 })
 export class PostsComponent implements OnInit {
   posts: Post[];
-  constructor(private readonly postsService: PostsService, private readonly router:Router){}
+  constructor(private readonly postsService: PostsService){}
 
   ngOnInit(): void {
     this.postsService.getPosts().subscribe((data)=>{
       this.posts = data;
     })
   }
-
-  navigateToCreatePost = () => {
-    this.router.navigate(['/add-post'])
-  }
-
-
 }
