@@ -16,7 +16,7 @@ export class AddPostComponent implements OnInit {
   addPostForm: FormGroup;
   postCreationStatus: boolean;
 
-  constructor(private readonly postsService: PostsService){}
+  constructor(private readonly postsService: PostsService, private readonly router: Router){}
 
   ngOnInit(): void {
     this.initForm();
@@ -53,4 +53,9 @@ export class AddPostComponent implements OnInit {
 
     this.addPostForm.reset()
   } 
+
+  navigateToPosts = () => {
+    this.router.navigate(['/posts'])
+    this.postCreationStatus = false;
+  }
 }

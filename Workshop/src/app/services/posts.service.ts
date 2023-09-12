@@ -6,10 +6,10 @@ import {
   doc,
   updateDoc,
   deleteDoc,
+  collectionGroup, collection, addDoc
 } from '@angular/fire/firestore';
 import { BehaviorSubject, Observable, Subject, from } from 'rxjs';
 import { Post, PostToCreate } from '../interfaces/post.interface';
-import { collectionGroup, collection, addDoc } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root'

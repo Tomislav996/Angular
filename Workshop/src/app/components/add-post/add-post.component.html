@@ -25,5 +25,5 @@
     
     <div class="post-status" *ngIf="postCreationStatus">
         <h2 class="success-msg">Successfully created a new post!</h2>
-        <button routerLink="/posts">Browse All Posts</button>
+        <button (click)="navigateToPosts()">Browse All Posts</button>
     </div>
